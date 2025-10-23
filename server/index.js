@@ -284,7 +284,7 @@ app.post("/login", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });
     if (user) {
-        return res.json({
+        return res.send({
             role: "user",
             id: user._id,
             name: user.fullName,

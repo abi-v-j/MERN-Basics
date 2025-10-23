@@ -8,6 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = () => {
+      
         axios.post('http://localhost:5000/login', { email, password })
             .then(res => {
                 const { role, id, name, message } = res.data;
